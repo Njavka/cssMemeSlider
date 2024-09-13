@@ -1,0 +1,13 @@
+*, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button, input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+img {
+    border-style: none;
+}
