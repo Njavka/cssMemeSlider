@@ -11,3 +11,76 @@ button, input {
 img {
     border-style: none;
 }
+:root {
+  --window-background: #34374b;
+  --buttons-color-main: orange;
+  --buttons-color-accent: yellow;
+  --font-color: wheat;
+}
+body {
+  background-color: var(--window-background)
+}
+.content {
+  background-color: var(--window-background);
+  margin: 0 auto;
+  height: 100vh;
+  width: 60vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  display: none;
+}
+.media {
+  max-width: 70vw;
+  height: 80%;
+  padding: 0 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.meme {
+  padding: 0.5vw;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 5%;
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20%;
+}
+.captions {
+  width: 70%;
+  height: 2.5vw;
+  padding-left: 5vw;
+  overflow: hidden;
+}
+.captions p {
+    display: flex;
+    font-size: 2.5vw;
+    color: var(--font-color);
+}
+.controls {
+  width: 30%;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 5vw;
+}
+.circle {
+  width: 1vw;
+  height: 1vw;
+  display: block;
+  border: 1px solid var(--buttons-color-accent);
+  border-radius: 50%;
+  background-color: var(--buttons-color-main);
+}
