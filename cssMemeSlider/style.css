@@ -17,9 +17,6 @@ img {
   --buttons-color-accent: yellow;
   --font-color: wheat;
 }
-body {
-  background-color: var(--window-background)
-}
 .content {
   background-color: var(--window-background);
   margin: 0 auto;
@@ -41,14 +38,14 @@ input {
   align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
+  border-radius: 3%;
+  background-color: black;
 }
 .meme {
   padding: 0.5vw;
   display: block;
-  height: auto;
   height: 100%;
   object-fit: contain;
-  border-radius: 5%;
   transition: 0.5s ease-in-out;
 }
 .info {
@@ -64,10 +61,10 @@ input {
   overflow: hidden;
 }
 .captions p {
-    display: flex;
-    font-size: 2.5vw;
-    color: var(--font-color);
-    transition: 0.5s ease-in-out;
+  display: flex;
+  font-size: 2.4vw;
+  color: var(--font-color);
+  transition: 0.5s ease-in-out;
 }
 .controls {
   width: 30%;
@@ -78,13 +75,15 @@ input {
   padding-right: 5vw;
 }
 .circle {
-  width: 1vw;
-  height: 1vw;
+  width: 2.5vw;
+  height: 2.5vw;
   display: block;
-  border: 0.3vw solid var(--buttons-color-accent);
+  border: 0.1vw solid var(--buttons-color-accent);
   border-radius: 50%;
   background-color: var(--buttons-color-main);
   transition: 0.5s ease-in-out;
+  cursor: pointer;
+  border: 0.8vw solid var(--window-background);
 }
 /*------------CIRCLES LOGIC--------------
 ----- # 1 ---*/
@@ -93,7 +92,7 @@ input {
 #btn3:hover ~ .info #circle3,
 #btn4:hover ~ .info #circle4,
 #btn5:hover ~ .info #circle5 {
-  background-color: red;
+  background-color: rgb(250, 108, 13);
 }
 #btn1:active ~ .info #circle1,
 #btn2:active ~ .info #circle2,
@@ -108,40 +107,49 @@ input {
 #btn3:checked ~ .info #circle3,
 #btn4:checked ~ .info #circle4,
 #btn5:checked ~ .info #circle5 {
-  background-color: black;
+  background-color: var(--font-color);
 }
 /* 1 */
 #btn1:checked ~ .media .meme {
   transform: translateY(0%);
 }
-#btn1:checked ~ .info .captions p:nth-of-type(1) {
+#btn1:checked ~ .info .captions p {
   transform: translateY(0%);
 }
 /* 2 */
 #btn2:checked ~ .media .meme {
   transform: translateY(-100%);
 }
-#btn2:checked ~ .info .captions p:nth-of-type(2) {
+#btn2:checked ~ .info .captions p {
   transform: translateY(-100%);
 }
 /* 3 */
 #btn3:checked ~ .media .meme {
   transform: translateY(-200%);
 }
-#btn3:checked ~ .info .captions p:nth-of-type(3) {
+#btn3:checked ~ .info .captions p {
   transform: translateY(-200%);
 }
 /* 4 */
 #btn4:checked ~ .media .meme {
   transform: translateY(-300%);
 }
-#btn4:checked ~ .info .captions p:nth-of-type(4) {
+#btn4:checked ~ .info .captions p {
   transform: translateY(-300%);
 }
 /* 5 */
 #btn5:checked ~ .media .meme {
   transform: translateY(-400%);
 }
-#btn5:checked ~ .info .captions p:nth-of-type(5) {
+#btn5:checked ~ .info .captions p {
   transform: translateY(-400%);
+}
+/* ------------ MOBILE ------------ */
+@media (max-width: 1280px) {
+  .content {
+    width: 94vw;
+  }
+  .info {
+    flex-direction: column;
+  }
 }
