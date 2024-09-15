@@ -47,9 +47,10 @@ input {
   display: block;
   height: auto;
   max-width: 100%;
-  max-height: 100%;
+  min-height: 90%;
   object-fit: contain;
   border-radius: 5%;
+  transition: 0.5s ease-in-out;
 }
 .info {
   display: flex;
@@ -67,6 +68,7 @@ input {
     display: flex;
     font-size: 2.5vw;
     color: var(--font-color);
+    transition: 0.5s ease-in-out;
 }
 .controls {
   width: 30%;
@@ -83,4 +85,65 @@ input {
   border: 1px solid var(--buttons-color-accent);
   border-radius: 50%;
   background-color: var(--buttons-color-main);
+  transition: 0.5s ease-in-out;
+}
+/*------------CIRCLES LOGIC--------------
+----- # 1 ---*/
+#btn1:hover ~ .info #circle1,
+#btn2:hover ~ .info #circle2,
+#btn3:hover ~ .info #circle3,
+#btn4:hover ~ .info #circle4,
+#btn5:hover ~ .info #circle5 {
+  background-color: red;
+}
+#btn1:active ~ .info #circle1,
+#btn2:active ~ .info #circle2,
+#btn3:active ~ .info #circle3,
+#btn4:active ~ .info #circle4,
+#btn5:active ~ .info #circle5 {
+  background-color: green;
+  border: 0.3vw solid black;
+}
+#btn1:checked ~ .info #circle1,
+#btn2:checked ~ .info #circle2,
+#btn3:checked ~ .info #circle3,
+#btn4:checked ~ .info #circle4,
+#btn5:checked ~ .info #circle5 {
+  background-color: black;
+}
+#btn1:checked ~ .media .meme {
+  transform: translateY(0%);
+}
+#btn1:checked ~ .info .captions:first-child {
+  transform: translateY(0%);
+}
+#btn2:checked ~ .media .meme {
+  transform: translateY(-100%);
+}
+#btn2:checked ~ .info .captions p:nth-of-type(2) {
+  transform: translateY(-100%);
+}
+#btn3:checked ~ .media .meme {
+  transform: translateY(-200%);
+}
+#btn3:checked ~ .info .captions p:nth-of-type(3) {
+  transform: translateY(-200%);
+}
+#btn3:checked ~ .media .meme {
+  transform: translateY(-300%);
+}
+#btn3:checked ~ .info .captions p:nth-of-type(3) {
+  transform: translateY(-300%);
+}
+#btn4:checked ~ .media .meme {
+  transform: translateY(-400%);
+}
+#btn4:checked ~ .info .captions p:nth-of-type(4) {
+  transform: translateY(-400%);
+}
+#btn5:checked ~ .media .meme {
+  transform: translateY(-500%);
+}
+#btn5:checked ~ .info .captions p:nth-of-type(5) {
+  transform: translateY(-500%);
 }
