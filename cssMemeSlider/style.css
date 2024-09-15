@@ -25,6 +25,7 @@ img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 input {
   display: none;
@@ -32,19 +33,19 @@ input {
 .media {
   max-width: 70vw;
   height: 80%;
-  padding: 0 2vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
   border-radius: 3%;
-  background-color: black;
+  background-color: #2B2D38;
 }
 .meme {
   padding: 0.5vw;
   display: block;
   height: 100%;
+  width: 98%;
   object-fit: contain;
   transition: 0.5s ease-in-out;
 }
@@ -56,13 +57,15 @@ input {
 }
 .captions {
   width: 70%;
-  height: 2.5vw;
+  height: 2.6vw;
   padding-left: 5vw;
   overflow: hidden;
 }
 .captions p {
   display: flex;
+  font-family: "Roboto", sans-serif;
   font-size: 2.4vw;
+  line-height: 2.6vw;
   color: var(--font-color);
   transition: 0.5s ease-in-out;
 }
@@ -99,7 +102,7 @@ input {
 #btn3:active ~ .info #circle3,
 #btn4:active ~ .info #circle4,
 #btn5:active ~ .info #circle5 {
-  background-color: green;
+  background-color: lightblue;
   border: 0.3vw solid black;
 }
 #btn1:checked ~ .info #circle1,
@@ -145,11 +148,29 @@ input {
   transform: translateY(-400%);
 }
 /* ------------ MOBILE ------------ */
-@media (max-width: 1280px) {
-  .content {
-    width: 94vw;
-  }
+@media (max-width: 768px) {
   .info {
     flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+  }
+  .captions {
+    padding-left: 0;
+    width: 94%;
+    height: 3.25vw;
+  }
+  .captions p {
+    display: block;
+    text-align: center;
+    font-size: 3vw;
+  line-height: 3.25vw;
+  }
+  .controls {
+    padding-right: 0;
+    min-width: 70%;
+  }
+  .circle {
+    width: 1.6rem;
+    height: 1.6rem;
   }
 }
