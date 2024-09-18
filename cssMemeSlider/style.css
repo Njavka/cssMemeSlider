@@ -1,0 +1,185 @@
+*, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button, input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+img {
+    border-style: none;
+}
+:root {
+  --window-background: #34374b;
+  --buttons-color-main: orange;
+  --buttons-color-accent: yellow;
+  --font-color: wheat;
+}
+.content {
+  background-color: var(--window-background);
+  margin: 0 auto;
+  height: 100vh;
+  width: 60vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+input {
+  display: none;
+}
+.media {
+  max-width: 70vw;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 3%;
+  background-color: #2B2D38;
+}
+.meme {
+  padding: 0.5vw;
+  display: block;
+  height: 100%;
+  width: 98%;
+  object-fit: contain;
+  transition: 0.5s ease-in-out;
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+  margin: 0 auto;
+}
+.captions {
+  width: 70%;
+  height: 2.6vw;
+  overflow: hidden;
+}
+.captions p {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.4vw;
+  line-height: 2.6vw;
+  color: var(--font-color);
+  transition: 0.5s ease-in-out;
+}
+.controls {
+  width: 30%;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.circle {
+  width: 2.5vw;
+  height: 2.5vw;
+  display: block;
+  border: 0.1vw solid var(--buttons-color-accent);
+  border-radius: 50%;
+  background-color: var(--buttons-color-main);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  border: 0.8vw solid var(--window-background);
+}
+/*------------CIRCLES LOGIC--------------
+----- # 1 ---*/
+@media (min-width: 768px) {
+#btn1:hover ~ .info #circle1,
+#btn2:hover ~ .info #circle2,
+#btn3:hover ~ .info #circle3,
+#btn4:hover ~ .info #circle4,
+#btn5:hover ~ .info #circle5 {
+  background-color: rgb(250, 108, 13);
+}
+}
+#btn1:active ~ .info #circle1,
+#btn2:active ~ .info #circle2,
+#btn3:active ~ .info #circle3,
+#btn4:active ~ .info #circle4,
+#btn5:active ~ .info #circle5 {
+  background-color: lightblue;
+  border: 0.3vw solid black;
+}
+#btn1:checked ~ .info #circle1,
+#btn2:checked ~ .info #circle2,
+#btn3:checked ~ .info #circle3,
+#btn4:checked ~ .info #circle4,
+#btn5:checked ~ .info #circle5 {
+  background-color: var(--font-color);
+}
+/* 1 */
+#btn1:checked ~ .media .meme {
+  transform: translateY(0%);
+}
+#btn1:checked ~ .info .captions p {
+  transform: translateY(0%);
+}
+/* 2 */
+#btn2:checked ~ .media .meme {
+  transform: translateY(-100%);
+}
+#btn2:checked ~ .info .captions p {
+  transform: translateY(-100%);
+}
+/* 3 */
+#btn3:checked ~ .media .meme {
+  transform: translateY(-200%);
+}
+#btn3:checked ~ .info .captions p {
+  transform: translateY(-200%);
+}
+/* 4 */
+#btn4:checked ~ .media .meme {
+  transform: translateY(-300%);
+}
+#btn4:checked ~ .info .captions p {
+  transform: translateY(-300%);
+}
+/* 5 */
+#btn5:checked ~ .media .meme {
+  transform: translateY(-400%);
+}
+#btn5:checked ~ .info .captions p {
+  transform: translateY(-400%);
+}
+/* ------------ MOBILE ------------ */
+@media (max-width: 768px) {
+  .content {
+    width: 96vw;
+  }
+  .media {
+    max-width: 100%;
+  }
+  .info {
+    flex-direction: column-reverse;
+    justify-content: center;
+    row-gap: 2rem;
+  }
+  .captions {
+    padding-left: 0;
+    width: 94%;
+    height: 3.25vw;
+  }
+  .captions p {
+    display: block;
+    text-align: center;
+    font-size: 3vw;
+    line-height: 3.25vw;
+  }
+  .controls {
+    padding-right: 0;
+    min-width: 70%;
+    justify-content: center;
+  }
+  .circle {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
