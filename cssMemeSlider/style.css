@@ -161,3 +161,38 @@ input {
 #btn6:checked ~ .info .captions p {
   transform: translateY(-500%);
 }
+
+/* ------------ MOBILE ------------ */
+@media (max-width: 768px) {
+  .content {
+    width: 96vw;
+  }
+  .media {
+    max-width: 100%;
+  }
+  .info {
+    flex-direction: column-reverse;
+    justify-content: center;
+    row-gap: 2rem;
+  }
+  .captions {
+    padding-left: 0;
+    width: 94%;
+    height: 3.25vw;
+  }
+  .captions p {
+    display: block;
+    text-align: center;
+    font-size: 3vw;
+    line-height: 3.5vw;
+  }
+  .controls {
+    padding-right: 0;
+    min-width: 70%;
+    justify-content: center;
+  }
+  .circle {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
