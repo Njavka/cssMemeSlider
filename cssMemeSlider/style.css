@@ -3,11 +3,88 @@
   padding: 0;
   box-sizing: border-box;
 }
+button, input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+img {
+    border-style: none;
+}
+:root {
+  --window-background: #34374b;
+  --buttons-color-main: orange;
+  --buttons-color-accent: yellow;
+  --font-color: wheat;
+}
 .content {
+  background-color: var(--window-background);
   margin: 0 auto;
   height: 100vh;
   width: 60vw;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+input {
+  display: none;
+}
+.media {
+  max-width: 70vw;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 3%;
+  background-color: #2B2D38;
+}
+.meme {
+  padding: 0.5vw;
+  display: block;
+  height: 100%;
+  width: 98%;
+  object-fit: contain;
+  transition: 0.5s ease-in-out;
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+  margin: 0 auto;
+}
+.captions {
+  width: 70%;
+  height: 2.6vw;
+  overflow: hidden;
+}
+.captions p {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.4vw;
+  line-height: 2.6vw;
+  color: var(--font-color);
+  transition: 0.5s ease-in-out;
+}
+.controls {
+  width: 30%;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.circle {
+  width: 2.5vw;
+  height: 2.5vw;
+  display: block;
+  border: 0.1vw solid var(--buttons-color-accent);
+  border-radius: 50%;
+  background-color: var(--buttons-color-main);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  border: 0.8vw solid var(--window-background);
 }
